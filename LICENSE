@@ -2,12 +2,13 @@ SCOPE OF THIS LICENCE
 ---------------------
 
 The MIT Licence below covers the contents of this repository only: the source code, the
-documentation, and the public 5-minute ground truth in evaluation/gt/.
+documentation, and the public 5-minute ground truth in evaluation/ground_truth/.
 
 It does NOT cover the match data — the videos, the tracking data, the Smart Tagging and the
 homography. Those assets are separately licensed for this competition only, under the terms you
 accept at enrolment, and nothing in the licence below grants any right to use or redistribute
-them. See DATA.md and RULES.md.
+them. See the competition data terms and rules at
+https://github.com/hadisotudeh/more-than-a-hack-2027.
 
 ---
 

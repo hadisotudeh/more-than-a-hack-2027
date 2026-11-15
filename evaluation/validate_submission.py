@@ -5,8 +5,8 @@ official scorer applies, so a file that passes here will not be rejected there -
 fails here would have been silently dropped from the board with a one-line reason nobody would
 have read in time.
 
-    python evaluation/validate_submission.py my_submission.csv
-    python evaluation/validate_submission.py my_submission.csv --rows 199319
+    pipenv run python evaluation/validate_submission.py my_submission.csv
+    pipenv run python evaluation/validate_submission.py my_submission.csv --rows 199319
 
 On success it also prints what the file actually says -- label counts, how many possessions it
 reports and how long they are. That second half is worth reading. A file can be perfectly valid
@@ -66,7 +66,7 @@ if __name__ == '__main__':
     if reason:
         print("FAIL  {}".format(os.path.basename(args.submission)))
         print("      {}".format(reason))
-        print("\nSee SUBMISSION.md for the contract. The usual causes are an off-by-one at the "
+        print("\nSee README.md for the submission format. The usual causes are an off-by-one at the "
               "start or end of\nthe file, a missing header, and blank cells where the system had "
               "no answer -- write X instead.")
         sys.exit(1)
@@ -86,4 +86,4 @@ if __name__ == '__main__':
         print("      (counted with each X as a gap; the scorer bridges abstentions inside a real")
         print("       possession, so its count can be lower than this one)")
     print("\nValid. Note this checks the format only -- it says nothing about whether the labels "
-          "are right.\nScore it against the public ground truth with run_evaluation.py.")
+          "are right.\nExport and score the active model with pipenv run python -m model.submission.")

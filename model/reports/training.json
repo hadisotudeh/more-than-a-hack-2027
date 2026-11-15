@@ -1,0 +1,1765 @@
+{
+  "experiment": "skillcorner_20_compact",
+  "train_matches": [
+    "skillcorner_1874553",
+    "skillcorner_1886347",
+    "skillcorner_1899585",
+    "skillcorner_1925299",
+    "skillcorner_1927964",
+    "skillcorner_1953632",
+    "skillcorner_1959846",
+    "skillcorner_1986691",
+    "skillcorner_1996435",
+    "skillcorner_1996436",
+    "skillcorner_2006229",
+    "skillcorner_2006363",
+    "skillcorner_2007448",
+    "skillcorner_2007721",
+    "skillcorner_2010085",
+    "skillcorner_2011166",
+    "skillcorner_2013725",
+    "skillcorner_2015213",
+    "skillcorner_2016236",
+    "skillcorner_2017461"
+  ],
+  "evaluation_matches": [
+    "barca"
+  ],
+  "source_sha256": "92b8176baf1dff7a1952abbd5926cde219b11a8d4218c1112f11827c58d53c4d",
+  "feature_cache_sha256": "b8821fb6ea801626a81de61dbbb3338dae1665a00e1c4872314d556a34276f9c",
+  "model_sha256": "d038f1c477b90ef21f8735b41b70b31a5016ba9bf362d52c7bfde54884844729",
+  "synthetic_augmentation": false,
+  "exclude": "(?:^(own_n|opp_n|n_tracked|ball_known|ball_seen|ball_seen_m1\\.0|opp_touches_before)$)|(?:^(own_cx_m1\\.0|opp_cx_m1\\.0|own_cx_m3\\.0|opp_cx_m3\\.0)$)",
+  "deduplicate_dead": true,
+  "dead_exclude": "^team1\\.(own_n2|opp_n2|own_touches_before)$",
+  "possession_exclude": "^shared\\.ball_since_seen_s$",
+  "input_counts": {
+    "dead": 121,
+    "possession": 108
+  },
+  "model_parameters": {
+    "max_iter": 600,
+    "learning_rate": 0.05,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 400,
+    "l2_regularization": 1.0,
+    "early_stopping": false,
+    "random_state": 0
+  },
+  "decoder_parameters": {
+    "a_dead": 0.75,
+    "a_team": 2.0,
+    "switch": 64.0,
+    "stop": 40.0,
+    "restart": 40.0,
+    "min_dead": 25
+  },
+  "barca_postprocessing": {
+    "known_dead_ball_blocks": [
+      [
+        110808,
+        113742
+      ]
+    ],
+    "policy_sha256": "76943b7eb74598a9a94122d6c0cd6e9ba81b153765416227864ac4bd0be77511",
+    "prediction_sha256": "e044051407a602d08e325633d7b6c640c7bd86ad7ada82a420bc94c3e4192b60"
+  },
+  "versions": {
+    "python": "3.14.7",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "sklearn": "1.8.0"
+  },
+  "training_seconds": 184.69645357131958,
+  "feature_names": {
+    "team": [
+      "ball_fwd_v_after",
+      "ball_fwd_v_before",
+      "ball_fwd_v_m1",
+      "ball_minus_opp_cx",
+      "ball_minus_own_cx",
+      "ball_xa",
+      "ball_xa_m1",
+      "d_diff",
+      "d_diff_m0.5",
+      "d_diff_m1.0",
+      "d_diff_m3.0",
+      "last_toucher",
+      "next_toucher",
+      "opp_ctrl_m0.5",
+      "opp_ctrl_m1.0",
+      "opp_ctrl_m3.0",
+      "opp_cx",
+      "opp_d",
+      "opp_fwd_v",
+      "opp_fwd_v_delta",
+      "opp_fwd_v_m3",
+      "opp_in_opp",
+      "opp_n2",
+      "opp_n5",
+      "opp_since_ctrl",
+      "opp_since_touch",
+      "opp_sx",
+      "opp_sx_delta",
+      "opp_sx_m1.0",
+      "opp_sx_m3.0",
+      "opp_sy",
+      "opp_touches_after",
+      "opp_until_ctrl",
+      "opp_until_touch",
+      "opp_v",
+      "opp_xmax",
+      "opp_xmin2",
+      "own_ctrl_m0.5",
+      "own_ctrl_m1.0",
+      "own_ctrl_m3.0",
+      "own_cx",
+      "own_d",
+      "own_fwd_v",
+      "own_fwd_v_delta",
+      "own_fwd_v_m3",
+      "own_in_opp",
+      "own_n2",
+      "own_n5",
+      "own_since_ctrl",
+      "own_since_touch",
+      "own_sx",
+      "own_sx_delta",
+      "own_sx_m1.0",
+      "own_sx_m3.0",
+      "own_sy",
+      "own_touches_after",
+      "own_touches_before",
+      "own_until_ctrl",
+      "own_until_touch",
+      "own_v",
+      "own_xmax",
+      "own_xmin2",
+      "since_ctrl_diff",
+      "until_ctrl_diff"
+    ],
+    "shared": [
+      "ball_miss_run_s",
+      "ball_oob",
+      "ball_oob_m1",
+      "ball_oob_m3",
+      "ball_proj_exit_s",
+      "ball_seen_m3.0",
+      "ball_since_seen_s",
+      "ball_speed",
+      "ball_speed_after_1s",
+      "ball_speed_after_2s",
+      "ball_speed_before_1s",
+      "ball_speed_before_2s",
+      "ball_speed_m1.0",
+      "ball_speed_m3.0",
+      "ball_still_m1",
+      "ball_to_centre",
+      "ball_to_corner",
+      "ball_to_goalline",
+      "ball_to_touchline",
+      "ball_until_seen_s",
+      "ball_window_speed",
+      "block_motion_m3",
+      "ctrl_any_m1",
+      "dmin_any",
+      "frac_fast_m3",
+      "kickoff_shape",
+      "kickoff_shape_m3",
+      "last_ball_oob",
+      "n5_any",
+      "since_ctrl_any",
+      "since_oob_s",
+      "since_still_s",
+      "speed_delta_1s",
+      "speed_delta_2s",
+      "speed_max_m1",
+      "speed_mean_m1.0",
+      "speed_mean_m3.0",
+      "speed_mean_m6.0",
+      "speed_ratio_m1.0",
+      "speed_ratio_m3.0",
+      "speed_ratio_m6.0",
+      "spread_sum",
+      "until_ctrl_any",
+      "until_oob_s",
+      "until_still_s"
+    ]
+  },
+  "training_audit": [
+    {
+      "name": "skillcorner_1874553",
+      "fps": 10,
+      "frames": 60301,
+      "halves": [
+        [
+          10,
+          28991
+        ],
+        [
+          29000,
+          60301
+        ]
+      ],
+      "graded_frames": 60282,
+      "ball_available_frames": 44244,
+      "label_counts": {
+        "H": 12725,
+        "A": 19999,
+        "D": 27558,
+        "X": 19
+      },
+      "ball_availability_by_label": {
+        "H": {
+          "frames": 12725,
+          "available": 12392
+        },
+        "A": {
+          "frames": 19999,
+          "available": 19757
+        },
+        "D": {
+          "frames": 27558,
+          "available": 12095
+        }
+      },
+      "label_source": "phases_of_play; complement within halves assumed D",
+      "metadata_endpoint_frames_absent_from_tracking": 0,
+      "phase_rows_clipped_at_period_end": 1,
+      "tracking_possession_comparable_frames": 31490,
+      "tracking_possession_team_disagreements": 4251,
+      "phase_dead_but_tracking_team_frames": 1411,
+      "ball_detected_frames": 36401
+    },
+    {
+      "name": "skillcorner_1886347",
+      "fps": 10,
+      "frames": 59061,
+      "halves": [
+        [
+          10,
+          27791
+        ],
+        [
+          27800,
+          59061
+        ]
+      ],
+      "graded_frames": 59042,
+      "ball_available_frames": 43458,
+      "label_counts": {
+        "H": 18342,
+        "A": 13648,
+        "D": 27052,
+        "X": 19
+      },
+      "ball_availability_by_label": {
+        "H": {
+          "frames": 18342,
+          "available": 18008
+        },
+        "A": {
+          "frames": 13648,
+          "available": 13422
+        },
+        "D": {
+          "frames": 27052,
+          "available": 12028
+        }
+      },
+      "label_source": "phases_of_play; complement within halves assumed D",
+      "metadata_endpoint_frames_absent_from_tracking": 0,
+      "phase_rows_clipped_at_period_end": 1,
+      "tracking_possession_comparable_frames": 31011,
+      "tracking_possession_team_disagreements": 4421,
+      "phase_dead_but_tracking_team_frames": 1089,
+      "ball_detected_frames": 35750
+    },
+    {
+      "name": "skillcorner_1899585",
+      "fps": 10,
+      "frames": 60531,
+      "halves": [
+        [
+          10,
+          29761
+        ],
+        [
+          29770,
+          60530
+        ]
+      ],
+      "graded_frames": 60511,
+      "ball_available_frames": 40681,
+      "label_counts": {
+        "H": 14947,
+        "A": 14732,
+        "D": 30832,
+        "X": 20
+      },
+      "ball_availability_by_label": {
+        "H": {
+          "frames": 14947,
+          "available": 14683
+        },
+        "A": {
+          "frames": 14732,
+          "available": 14208
+        },
+        "D": {
+          "frames": 30832,
+          "available": 11790
+        }
+      },
+      "label_source": "phases_of_play; complement within halves assumed D",
+      "metadata_endpoint_frames_absent_from_tracking": 1,
+      "phase_rows_clipped_at_period_end": 1,
+      "tracking_possession_comparable_frames": 28332,
+      "tracking_possession_team_disagreements": 5054,
+      "phase_dead_but_tracking_team_frames": 1244,
+      "ball_detected_frames": 31826
+    },
+    {
+      "name": "skillcorner_1925299",
+      "fps": 10,
+      "frames": 61301,
+      "halves": [
+        [
+          10,
+          30241
+        ],
+        [
+          30250,
+          61301
+        ]
+      ],
+      "graded_frames": 61282,
+      "ball_available_frames": 47942,
+      "label_counts": {
+        "H": 21563,
+        "A": 14079,
+        "D": 25640,
+        "X": 19
+      },
+      "ball_availability_by_label": {
+        "H": {
+          "frames": 21563,
+          "available": 21494
+        },
+        "A": {
+          "frames": 14079,
+          "available": 13509
+        },
+        "D": {
+          "frames": 25640,
+          "available": 12939
+        }
+      },
+      "label_source": "phases_of_play; complement within halves assumed D",
+      "metadata_endpoint_frames_absent_from_tracking": 0,
+      "phase_rows_clipped_at_period_end": 1,
+      "tracking_possession_comparable_frames": 34272,
+      "tracking_possession_team_disagreements": 5080,
+      "phase_dead_but_tracking_team_frames": 1317,
+      "ball_detected_frames": 38618
+    },
+    {
+      "name": "skillcorner_1927964",
+      "fps": 10,
+      "frames": 59071,
+      "halves": [
+        [
+          10,
+          28381
+        ],
+        [
+          28390,
+          59070
+        ]
+      ],
+      "graded_frames": 59051,
+      "ball_available_frames": 44759,
+      "label_counts": {
+        "H": 19343,
+        "A": 17780,
+        "D": 21928,
+        "X": 20
+      },
+      "ball_availability_by_label": {
+        "H": {
+          "frames": 19343,
+          "available": 19096
+        },
+        "A": {
+          "frames": 17780,
+          "available": 17500
+        },
+        "D": {
+          "frames": 21928,
+          "available": 8163
+        }
+      },
+      "label_source": "phases_of_play; complement within halves assumed D",
+      "metadata_endpoint_frames_absent_from_tracking": 1,
+      "phase_rows_clipped_at_period_end": 1,
+      "tracking_possession_comparable_frames": 36389,
+      "tracking_possession_team_disagreements": 4509,
+      "phase_dead_but_tracking_team_frames": 1009,
+      "ball_detected_frames": 38215
+    },
+    {
+      "name": "skillcorner_1953632",
+      "fps": 10,
+      "frames": 59251,
+      "halves": [
+        [
+          10,
+          28971
+        ],
+        [
+          28980,
+          59250
+        ]
+      ],
+      "graded_frames": 59231,
+      "ball_available_frames": 43912,
+      "label_counts": {
+        "H": 10859,
+        "A": 21882,
+        "D": 26490,
+        "X": 20
+      },
+      "ball_availability_by_label": {
+        "H": {
+          "frames": 10859,
+          "available": 10556
+        },
+        "A": {
+          "frames": 21882,
+          "available": 21575
+        },
+        "D": {
+          "frames": 26490,
+          "available": 11781
+        }
+      },
+      "label_source": "phases_of_play; complement within halves assumed D",
+      "metadata_endpoint_frames_absent_from_tracking": 1,
+      "phase_rows_clipped_at_period_end": 1,
+      "tracking_possession_comparable_frames": 32069,
+      "tracking_possession_team_disagreements": 4660,
+      "phase_dead_but_tracking_team_frames": 1290,
+      "ball_detected_frames": 35038
+    },
+    {
+      "name": "skillcorner_1959846",
+      "fps": 10,
+      "frames": 58541,
+      "halves": [
+        [
+          0,
+          27961
+        ],
+        [
+          27970,
+          58541
+        ]
+      ],
+      "graded_frames": 58532,
+      "ball_available_frames": 42739,
+      "label_counts": {
+        "H": 14885,
+        "A": 14914,
+        "D": 28733,
+        "X": 9
+      },
+      "ball_availability_by_label": {
+        "H": {
+          "frames": 14885,
+          "available": 14656
+        },
+        "A": {
+          "frames": 14914,
+          "available": 14843
+        },
+        "D": {
+          "frames": 28733,
+          "available": 13240
+        }
+      },
+      "label_source": "phases_of_play; complement within halves assumed D",
+      "metadata_endpoint_frames_absent_from_tracking": 0,
+      "phase_rows_clipped_at_period_end": 1,
+      "tracking_possession_comparable_frames": 29245,
+      "tracking_possession_team_disagreements": 4723,
+      "phase_dead_but_tracking_team_frames": 1828,
+      "ball_detected_frames": 34824
+    },
+    {
+      "name": "skillcorner_1986691",
+      "fps": 10,
+      "frames": 59091,
+      "halves": [
+        [
+          10,
+          27781
+        ],
+        [
+          27790,
+          59090
+        ]
+      ],
+      "graded_frames": 59071,
+      "ball_available_frames": 43076,
+      "label_counts": {
+        "H": 14554,
+        "A": 17013,
+        "D": 27504,
+        "X": 20
+      },
+      "ball_availability_by_label": {
+        "H": {
+          "frames": 14554,
+          "available": 13988
+        },
+        "A": {
+          "frames": 17013,
+          "available": 16254
+        },
+        "D": {
+          "frames": 27504,
+          "available": 12834
+        }
+      },
+      "label_source": "phases_of_play; complement within halves assumed D",
+      "metadata_endpoint_frames_absent_from_tracking": 1,
+      "phase_rows_clipped_at_period_end": 1,
+      "tracking_possession_comparable_frames": 30806,
+      "tracking_possession_team_disagreements": 4673,
+      "phase_dead_but_tracking_team_frames": 1254,
+      "ball_detected_frames": 34019
+    },
+    {
+      "name": "skillcorner_1996435",
+      "fps": 10,
+      "frames": 57621,
+      "halves": [
+        [
+          10,
+          28021
+        ],
+        [
+          28030,
+          57621
+        ]
+      ],
+      "graded_frames": 57602,
+      "ball_available_frames": 43531,
+      "label_counts": {
+        "H": 17355,
+        "A": 14757,
+        "D": 25490,
+        "X": 19
+      },
+      "ball_availability_by_label": {
+        "H": {
+          "frames": 17355,
+          "available": 17170
+        },
+        "A": {
+          "frames": 14757,
+          "available": 14403
+        },
+        "D": {
+          "frames": 25490,
+          "available": 11958
+        }
+      },
+      "label_source": "phases_of_play; complement within halves assumed D",
+      "metadata_endpoint_frames_absent_from_tracking": 0,
+      "phase_rows_clipped_at_period_end": 1,
+      "tracking_possession_comparable_frames": 31344,
+      "tracking_possession_team_disagreements": 5000,
+      "phase_dead_but_tracking_team_frames": 1246,
+      "ball_detected_frames": 34701
+    },
+    {
+      "name": "skillcorner_1996436",
+      "fps": 10,
+      "frames": 60281,
+      "halves": [
+        [
+          10,
+          30141
+        ],
+        [
+          30150,
+          60280
+        ]
+      ],
+      "graded_frames": 60261,
+      "ball_available_frames": 43066,
+      "label_counts": {
+        "H": 14607,
+        "A": 12416,
+        "D": 33238,
+        "X": 20
+      },
+      "ball_availability_by_label": {
+        "H": {
+          "frames": 14607,
+          "available": 14604
+        },
+        "A": {
+          "frames": 12416,
+          "available": 12348
+        },
+        "D": {
+          "frames": 33238,
+          "available": 16114
+        }
+      },
+      "label_source": "phases_of_play; complement within halves assumed D",
+      "metadata_endpoint_frames_absent_from_tracking": 1,
+      "phase_rows_clipped_at_period_end": 1,
+      "tracking_possession_comparable_frames": 26079,
+      "tracking_possession_team_disagreements": 4712,
+      "phase_dead_but_tracking_team_frames": 1497,
+      "ball_detected_frames": 32785
+    },
+    {
+      "name": "skillcorner_2006229",
+      "fps": 10,
+      "frames": 59271,
+      "halves": [
+        [
+          10,
+          28481
+        ],
+        [
+          28490,
+          59270
+        ]
+      ],
+      "graded_frames": 59251,
+      "ball_available_frames": 44171,
+      "label_counts": {
+        "H": 19193,
+        "A": 13354,
+        "D": 26704,
+        "X": 20
+      },
+      "ball_availability_by_label": {
+        "H": {
+          "frames": 19193,
+          "available": 18941
+        },
+        "A": {
+          "frames": 13354,
+          "available": 13164
+        },
+        "D": {
+          "frames": 26704,
+          "available": 12066
+        }
+      },
+      "label_source": "phases_of_play; complement within halves assumed D",
+      "metadata_endpoint_frames_absent_from_tracking": 1,
+      "phase_rows_clipped_at_period_end": 1,
+      "tracking_possession_comparable_frames": 31309,
+      "tracking_possession_team_disagreements": 4450,
+      "phase_dead_but_tracking_team_frames": 1143,
+      "ball_detected_frames": 35881
+    },
+    {
+      "name": "skillcorner_2006363",
+      "fps": 10,
+      "frames": 59091,
+      "halves": [
+        [
+          10,
+          28951
+        ],
+        [
+          28960,
+          59091
+        ]
+      ],
+      "graded_frames": 59072,
+      "ball_available_frames": 44347,
+      "label_counts": {
+        "H": 17855,
+        "A": 14552,
+        "D": 26665,
+        "X": 19
+      },
+      "ball_availability_by_label": {
+        "H": {
+          "frames": 17855,
+          "available": 17745
+        },
+        "A": {
+          "frames": 14552,
+          "available": 14258
+        },
+        "D": {
+          "frames": 26665,
+          "available": 12344
+        }
+      },
+      "label_source": "phases_of_play; complement within halves assumed D",
+      "metadata_endpoint_frames_absent_from_tracking": 0,
+      "phase_rows_clipped_at_period_end": 1,
+      "tracking_possession_comparable_frames": 31665,
+      "tracking_possession_team_disagreements": 4971,
+      "phase_dead_but_tracking_team_frames": 1189,
+      "ball_detected_frames": 36160
+    },
+    {
+      "name": "skillcorner_2007448",
+      "fps": 10,
+      "frames": 58081,
+      "halves": [
+        [
+          10,
+          28531
+        ],
+        [
+          28540,
+          58081
+        ]
+      ],
+      "graded_frames": 58062,
+      "ball_available_frames": 44283,
+      "label_counts": {
+        "H": 14269,
+        "A": 14963,
+        "D": 28830,
+        "X": 19
+      },
+      "ball_availability_by_label": {
+        "H": {
+          "frames": 14269,
+          "available": 13987
+        },
+        "A": {
+          "frames": 14963,
+          "available": 14784
+        },
+        "D": {
+          "frames": 28830,
+          "available": 15512
+        }
+      },
+      "label_source": "phases_of_play; complement within halves assumed D",
+      "metadata_endpoint_frames_absent_from_tracking": 0,
+      "phase_rows_clipped_at_period_end": 1,
+      "tracking_possession_comparable_frames": 28116,
+      "tracking_possession_team_disagreements": 4002,
+      "phase_dead_but_tracking_team_frames": 1559,
+      "ball_detected_frames": 34600
+    },
+    {
+      "name": "skillcorner_2007721",
+      "fps": 10,
+      "frames": 57561,
+      "halves": [
+        [
+          10,
+          27711
+        ],
+        [
+          27720,
+          57561
+        ]
+      ],
+      "graded_frames": 57542,
+      "ball_available_frames": 46297,
+      "label_counts": {
+        "H": 16315,
+        "A": 17072,
+        "D": 24155,
+        "X": 19
+      },
+      "ball_availability_by_label": {
+        "H": {
+          "frames": 16315,
+          "available": 16160
+        },
+        "A": {
+          "frames": 17072,
+          "available": 16976
+        },
+        "D": {
+          "frames": 24155,
+          "available": 13161
+        }
+      },
+      "label_source": "phases_of_play; complement within halves assumed D",
+      "metadata_endpoint_frames_absent_from_tracking": 0,
+      "phase_rows_clipped_at_period_end": 1,
+      "tracking_possession_comparable_frames": 32715,
+      "tracking_possession_team_disagreements": 4765,
+      "phase_dead_but_tracking_team_frames": 1354,
+      "ball_detected_frames": 37146
+    },
+    {
+      "name": "skillcorner_2010085",
+      "fps": 10,
+      "frames": 58991,
+      "halves": [
+        [
+          10,
+          29441
+        ],
+        [
+          29450,
+          58991
+        ]
+      ],
+      "graded_frames": 58972,
+      "ball_available_frames": 45521,
+      "label_counts": {
+        "H": 20091,
+        "A": 12278,
+        "D": 26603,
+        "X": 19
+      },
+      "ball_availability_by_label": {
+        "H": {
+          "frames": 20091,
+          "available": 20055
+        },
+        "A": {
+          "frames": 12278,
+          "available": 11973
+        },
+        "D": {
+          "frames": 26603,
+          "available": 13493
+        }
+      },
+      "label_source": "phases_of_play; complement within halves assumed D",
+      "metadata_endpoint_frames_absent_from_tracking": 0,
+      "phase_rows_clipped_at_period_end": 1,
+      "tracking_possession_comparable_frames": 31775,
+      "tracking_possession_team_disagreements": 4951,
+      "phase_dead_but_tracking_team_frames": 1197,
+      "ball_detected_frames": 38008
+    },
+    {
+      "name": "skillcorner_2011166",
+      "fps": 10,
+      "frames": 71391,
+      "halves": [
+        [
+          2300,
+          31291
+        ],
+        [
+          41090,
+          71391
+        ]
+      ],
+      "graded_frames": 59292,
+      "ball_available_frames": 39015,
+      "label_counts": {
+        "H": 11838,
+        "A": 15289,
+        "D": 32165,
+        "X": 12099
+      },
+      "ball_availability_by_label": {
+        "H": {
+          "frames": 11838,
+          "available": 11605
+        },
+        "A": {
+          "frames": 15289,
+          "available": 15162
+        },
+        "D": {
+          "frames": 32165,
+          "available": 12248
+        }
+      },
+      "label_source": "phases_of_play; complement within halves assumed D",
+      "metadata_endpoint_frames_absent_from_tracking": 0,
+      "phase_rows_clipped_at_period_end": 0,
+      "tracking_possession_comparable_frames": 26225,
+      "tracking_possession_team_disagreements": 5484,
+      "phase_dead_but_tracking_team_frames": 1433,
+      "ball_detected_frames": 31278
+    },
+    {
+      "name": "skillcorner_2013725",
+      "fps": 10,
+      "frames": 69861,
+      "halves": [
+        [
+          4040,
+          31931
+        ],
+        [
+          40960,
+          69861
+        ]
+      ],
+      "graded_frames": 56792,
+      "ball_available_frames": 44992,
+      "label_counts": {
+        "H": 15295,
+        "A": 15845,
+        "D": 25652,
+        "X": 13069
+      },
+      "ball_availability_by_label": {
+        "H": {
+          "frames": 15295,
+          "available": 14795
+        },
+        "A": {
+          "frames": 15845,
+          "available": 15529
+        },
+        "D": {
+          "frames": 25652,
+          "available": 14668
+        }
+      },
+      "label_source": "phases_of_play; complement within halves assumed D",
+      "metadata_endpoint_frames_absent_from_tracking": 0,
+      "phase_rows_clipped_at_period_end": 0,
+      "tracking_possession_comparable_frames": 30011,
+      "tracking_possession_team_disagreements": 6436,
+      "phase_dead_but_tracking_team_frames": 1764,
+      "ball_detected_frames": 35561
+    },
+    {
+      "name": "skillcorner_2015213",
+      "fps": 10,
+      "frames": 71351,
+      "halves": [
+        [
+          2210,
+          31041
+        ],
+        [
+          40280,
+          71351
+        ]
+      ],
+      "graded_frames": 59902,
+      "ball_available_frames": 48542,
+      "label_counts": {
+        "H": 13204,
+        "A": 17192,
+        "D": 29506,
+        "X": 11449
+      },
+      "ball_availability_by_label": {
+        "H": {
+          "frames": 13204,
+          "available": 13146
+        },
+        "A": {
+          "frames": 17192,
+          "available": 16944
+        },
+        "D": {
+          "frames": 29506,
+          "available": 18452
+        }
+      },
+      "label_source": "phases_of_play; complement within halves assumed D",
+      "metadata_endpoint_frames_absent_from_tracking": 0,
+      "phase_rows_clipped_at_period_end": 0,
+      "tracking_possession_comparable_frames": 29581,
+      "tracking_possession_team_disagreements": 5111,
+      "phase_dead_but_tracking_team_frames": 1768,
+      "ball_detected_frames": 36626
+    },
+    {
+      "name": "skillcorner_2016236",
+      "fps": 10,
+      "frames": 70551,
+      "halves": [
+        [
+          1170,
+          31721
+        ],
+        [
+          41060,
+          70551
+        ]
+      ],
+      "graded_frames": 60042,
+      "ball_available_frames": 43883,
+      "label_counts": {
+        "H": 15380,
+        "A": 17235,
+        "D": 27427,
+        "X": 10509
+      },
+      "ball_availability_by_label": {
+        "H": {
+          "frames": 15380,
+          "available": 15087
+        },
+        "A": {
+          "frames": 17235,
+          "available": 17025
+        },
+        "D": {
+          "frames": 27427,
+          "available": 11771
+        }
+      },
+      "label_source": "phases_of_play; complement within halves assumed D",
+      "metadata_endpoint_frames_absent_from_tracking": 0,
+      "phase_rows_clipped_at_period_end": 1,
+      "tracking_possession_comparable_frames": 31626,
+      "tracking_possession_team_disagreements": 5707,
+      "phase_dead_but_tracking_team_frames": 1508,
+      "ball_detected_frames": 35533
+    },
+    {
+      "name": "skillcorner_2017461",
+      "fps": 10,
+      "frames": 70421,
+      "halves": [
+        [
+          2510,
+          30211
+        ],
+        [
+          39670,
+          70421
+        ]
+      ],
+      "graded_frames": 58452,
+      "ball_available_frames": 40404,
+      "label_counts": {
+        "H": 17721,
+        "A": 10889,
+        "D": 29842,
+        "X": 11969
+      },
+      "ball_availability_by_label": {
+        "H": {
+          "frames": 17721,
+          "available": 17140
+        },
+        "A": {
+          "frames": 10889,
+          "available": 10724
+        },
+        "D": {
+          "frames": 29842,
+          "available": 12540
+        }
+      },
+      "label_source": "phases_of_play; complement within halves assumed D",
+      "metadata_endpoint_frames_absent_from_tracking": 0,
+      "phase_rows_clipped_at_period_end": 0,
+      "tracking_possession_comparable_frames": 27654,
+      "tracking_possession_team_disagreements": 6452,
+      "phase_dead_but_tracking_team_frames": 1234,
+      "ball_detected_frames": 31875
+    }
+  ],
+  "evaluation_audit": {
+    "barca": {
+      "name": "barca_tactical",
+      "fps": 25,
+      "frames": 199319,
+      "halves": [
+        [
+          11185,
+          90652
+        ],
+        [
+          110808,
+          190198
+        ]
+      ],
+      "graded_frames": 7500,
+      "ball_available_frames": 6615,
+      "label_counts": {
+        "H": 3454,
+        "A": 2577,
+        "D": 1469,
+        "X": 191819
+      },
+      "ball_availability_by_label": {
+        "H": {
+          "frames": 3454,
+          "available": 3449
+        },
+        "A": {
+          "frames": 2577,
+          "available": 2191
+        },
+        "D": {
+          "frames": 1469,
+          "available": 975
+        }
+      },
+      "label_source": "public Barcelona 5-minute human ground truth",
+      "source": "tactical only"
+    }
+  },
+  "results": {
+    "barca": {
+      "macro_f1": 0.8962522756594784,
+      "spell_f1_mean": 0.6064516129032258,
+      "spell_f1_at_headline": 0.6451612903225806,
+      "spell_iou_headline": 0.5,
+      "spell_bootstrap_low": null,
+      "spell_bootstrap_high": null,
+      "n_gt_spells": 17,
+      "n_pred_spells": 14,
+      "spell_count_error": -3,
+      "mean_spell_duration_s": 16.951428571428572,
+      "gt_mean_spell_duration_s": 14.190588235294117,
+      "accuracy": 0.9018666666666667,
+      "kappa": 0.845816386869031,
+      "alive_dead_f1": 0.9709127382146441,
+      "team_acc_gt_alive": 0.8986901011440889,
+      "team_acc_both_alive": 0.9331955922865014,
+      "gt_home_share": 0.5727076770021555,
+      "pred_home_share": 0.549131973706388,
+      "share_err": 0.023575703295767525,
+      "share_defined": true,
+      "n_gt_segments": 21,
+      "n_pred_segments": 19,
+      "fragmentation": 0.9047619047619048,
+      "n_frames": 199319,
+      "n_graded": 7500,
+      "n_abstain_on_graded": 0,
+      "bootstrap_low": null,
+      "bootstrap_high": null,
+      "bootstrap_n": 0,
+      "confusion": [
+        [
+          3146,
+          308,
+          0,
+          0
+        ],
+        [
+          80,
+          2274,
+          223,
+          0
+        ],
+        [
+          32,
+          93,
+          1344,
+          0
+        ],
+        [
+          44173,
+          26320,
+          80864,
+          40462
+        ]
+      ],
+      "per_class": {
+        "H": {
+          "precision": 0.9656230816451811,
+          "recall": 0.910828025477707,
+          "f1": 0.937425506555423,
+          "support": 3454
+        },
+        "A": {
+          "precision": 0.8500934579439252,
+          "recall": 0.8824214202561118,
+          "f1": 0.865955826351866,
+          "support": 2577
+        },
+        "D": {
+          "precision": 0.8576898532227186,
+          "recall": 0.9149081007488087,
+          "f1": 0.8853754940711464,
+          "support": 1469
+        }
+      },
+      "transitions": {
+        "12": {
+          "precision": 0.3888888888888889,
+          "recall": 0.35,
+          "f1": 0.36842105263157887,
+          "n_gt": 20,
+          "n_pred": 18,
+          "n_matched": 7,
+          "n_missed": 13,
+          "n_spurious": 11,
+          "n_ambiguous": 0,
+          "mean_latency": -3.7142857142857144,
+          "median_latency": -5.0,
+          "mean_abs_latency": 6.285714285714286,
+          "p90_abs_latency": 10.8,
+          "pairs": [
+            [
+              [
+                12989,
+                2,
+                0
+              ],
+              [
+                12979,
+                2,
+                0
+              ]
+            ],
+            [
+              [
+                13785,
+                1,
+                0
+              ],
+              [
+                13788,
+                1,
+                0
+              ]
+            ],
+            [
+              [
+                12665,
+                0,
+                1
+              ],
+              [
+                12671,
+                0,
+                1
+              ]
+            ],
+            [
+              [
+                14846,
+                0,
+                1
+              ],
+              [
+                14846,
+                0,
+                1
+              ]
+            ],
+            [
+              [
+                16400,
+                2,
+                1
+              ],
+              [
+                16395,
+                2,
+                1
+              ]
+            ],
+            [
+              [
+                17838,
+                2,
+                1
+              ],
+              [
+                17830,
+                2,
+                1
+              ]
+            ],
+            [
+              [
+                18027,
+                1,
+                2
+              ],
+              [
+                18015,
+                1,
+                2
+              ]
+            ]
+          ],
+          "missed": [
+            [
+              11351,
+              1,
+              0
+            ],
+            [
+              11624,
+              1,
+              0
+            ],
+            [
+              15346,
+              1,
+              0
+            ],
+            [
+              15766,
+              1,
+              0
+            ],
+            [
+              17293,
+              1,
+              0
+            ],
+            [
+              18389,
+              2,
+              0
+            ],
+            [
+              11553,
+              0,
+              1
+            ],
+            [
+              13704,
+              0,
+              1
+            ],
+            [
+              15365,
+              0,
+              1
+            ],
+            [
+              15799,
+              0,
+              1
+            ],
+            [
+              12851,
+              1,
+              2
+            ],
+            [
+              15889,
+              1,
+              2
+            ],
+            [
+              17380,
+              0,
+              2
+            ]
+          ],
+          "spurious": [
+            [
+              11471,
+              1,
+              0
+            ],
+            [
+              11595,
+              1,
+              0
+            ],
+            [
+              12792,
+              1,
+              0
+            ],
+            [
+              18367,
+              2,
+              0
+            ],
+            [
+              11540,
+              0,
+              1
+            ],
+            [
+              13671,
+              0,
+              1
+            ],
+            [
+              17267,
+              2,
+              1
+            ],
+            [
+              12837,
+              0,
+              2
+            ],
+            [
+              15907,
+              1,
+              2
+            ],
+            [
+              17070,
+              1,
+              2
+            ],
+            [
+              17442,
+              1,
+              2
+            ]
+          ]
+        },
+        "25": {
+          "precision": 0.6111111111111112,
+          "recall": 0.55,
+          "f1": 0.5789473684210527,
+          "n_gt": 20,
+          "n_pred": 18,
+          "n_matched": 11,
+          "n_missed": 9,
+          "n_spurious": 7,
+          "n_ambiguous": 0,
+          "mean_latency": -5.181818181818182,
+          "median_latency": -8.0,
+          "mean_abs_latency": 10.090909090909092,
+          "p90_abs_latency": 18.0,
+          "pairs": [
+            [
+              [
+                12989,
+                2,
+                0
+              ],
+              [
+                12979,
+                2,
+                0
+              ]
+            ],
+            [
+              [
+                13785,
+                1,
+                0
+              ],
+              [
+                13788,
+                1,
+                0
+              ]
+            ],
+            [
+              [
+                18389,
+                2,
+                0
+              ],
+              [
+                18367,
+                2,
+                0
+              ]
+            ],
+            [
+              [
+                11553,
+                0,
+                1
+              ],
+              [
+                11540,
+                0,
+                1
+              ]
+            ],
+            [
+              [
+                12665,
+                0,
+                1
+              ],
+              [
+                12671,
+                0,
+                1
+              ]
+            ],
+            [
+              [
+                14846,
+                0,
+                1
+              ],
+              [
+                14846,
+                0,
+                1
+              ]
+            ],
+            [
+              [
+                16400,
+                2,
+                1
+              ],
+              [
+                16395,
+                2,
+                1
+              ]
+            ],
+            [
+              [
+                17838,
+                2,
+                1
+              ],
+              [
+                17830,
+                2,
+                1
+              ]
+            ],
+            [
+              [
+                12851,
+                1,
+                2
+              ],
+              [
+                12837,
+                0,
+                2
+              ]
+            ],
+            [
+              [
+                15889,
+                1,
+                2
+              ],
+              [
+                15907,
+                1,
+                2
+              ]
+            ],
+            [
+              [
+                18027,
+                1,
+                2
+              ],
+              [
+                18015,
+                1,
+                2
+              ]
+            ]
+          ],
+          "missed": [
+            [
+              11351,
+              1,
+              0
+            ],
+            [
+              11624,
+              1,
+              0
+            ],
+            [
+              15346,
+              1,
+              0
+            ],
+            [
+              15766,
+              1,
+              0
+            ],
+            [
+              17293,
+              1,
+              0
+            ],
+            [
+              13704,
+              0,
+              1
+            ],
+            [
+              15365,
+              0,
+              1
+            ],
+            [
+              15799,
+              0,
+              1
+            ],
+            [
+              17380,
+              0,
+              2
+            ]
+          ],
+          "spurious": [
+            [
+              11471,
+              1,
+              0
+            ],
+            [
+              11595,
+              1,
+              0
+            ],
+            [
+              12792,
+              1,
+              0
+            ],
+            [
+              13671,
+              0,
+              1
+            ],
+            [
+              17267,
+              2,
+              1
+            ],
+            [
+              17070,
+              1,
+              2
+            ],
+            [
+              17442,
+              1,
+              2
+            ]
+          ]
+        }
+      },
+      "spell_f1": {
+        "0.3": {
+          "precision": 0.8571428571428571,
+          "recall": 0.7058823529411765,
+          "f1": 0.7741935483870968,
+          "n_matched": 12,
+          "n_spurious": 2,
+          "n_missed": 5
+        },
+        "0.4": {
+          "precision": 0.7857142857142857,
+          "recall": 0.6470588235294118,
+          "f1": 0.7096774193548386,
+          "n_matched": 11,
+          "n_spurious": 3,
+          "n_missed": 6
+        },
+        "0.5": {
+          "precision": 0.7142857142857143,
+          "recall": 0.5882352941176471,
+          "f1": 0.6451612903225806,
+          "n_matched": 10,
+          "n_spurious": 4,
+          "n_missed": 7
+        },
+        "0.6": {
+          "precision": 0.5714285714285714,
+          "recall": 0.47058823529411764,
+          "f1": 0.5161290322580646,
+          "n_matched": 8,
+          "n_spurious": 6,
+          "n_missed": 9
+        },
+        "0.7": {
+          "precision": 0.42857142857142855,
+          "recall": 0.35294117647058826,
+          "f1": 0.3870967741935484,
+          "n_matched": 6,
+          "n_spurious": 8,
+          "n_missed": 11
+        }
+      },
+      "gt_home_share_spells": 0.5727076770021555
+    }
+  },
+  "training_evaluation": {
+    "spell_f1_mean": 0.8019342312758078,
+    "macro_f1": 0.9392481353086597,
+    "accuracy": 0.945509995990512,
+    "alive_dead_f1": 0.9670598056201042,
+    "matches": 20,
+    "graded_frames": 1182244,
+    "predicted_possessions": 4520,
+    "reference_possessions": 5097,
+    "transition_f1_1s": 0.7132043187539695,
+    "mean_matched_boundary_error_s": 0.2787636545919077,
+    "aggregation": "Equal-match mean of scores; counts summed. Boundary error only on matched transitions within 1 s."
+  },
+  "promotion": {
+    "source_experiment": "correlated_ablation/centroid/full",
+    "reference_experiment": "skillcorner_20_pruned",
+    "removed_groups": [
+      "centroid"
+    ],
+    "adoption_checks": {
+      "complete": true,
+      "adopt": true,
+      "selection": {
+        "groups": [
+          "centroid"
+        ],
+        "candidate": "centroid",
+        "combined_validation_pass": true
+      },
+      "barcelona_reference": {
+        "spell_f1_mean": 0.6064516129032258,
+        "macro_f1": 0.8929423391164398,
+        "accuracy": 0.8993333333333333,
+        "alive_dead_f1": 0.9692821368948248,
+        "matches": 1,
+        "graded_frames": 7500,
+        "predicted_possessions": 14,
+        "reference_possessions": 17,
+        "transition_f1_1s": 0.5263157894736842,
+        "mean_matched_boundary_error_s": 0.364,
+        "aggregation": "Equal-match mean of scores; counts summed. Boundary error only on matched transitions within 1 s."
+      },
+      "barcelona_candidate": {
+        "spell_f1_mean": 0.6064516129032258,
+        "macro_f1": 0.8962522756594784,
+        "accuracy": 0.9018666666666667,
+        "alive_dead_f1": 0.9709127382146441,
+        "matches": 1,
+        "graded_frames": 7500,
+        "predicted_possessions": 14,
+        "reference_possessions": 17,
+        "transition_f1_1s": 0.5789473684210527,
+        "mean_matched_boundary_error_s": 0.4036363636363637,
+        "aggregation": "Equal-match mean of scores; counts summed. Boundary error only on matched transitions within 1 s."
+      },
+      "full_training": {
+        "spell_f1_mean": 0.8019342312758078,
+        "macro_f1": 0.9392481353086597,
+        "accuracy": 0.945509995990512,
+        "alive_dead_f1": 0.9670598056201042,
+        "matches": 20,
+        "graded_frames": 1182244,
+        "predicted_possessions": 4520,
+        "reference_possessions": 5097,
+        "transition_f1_1s": 0.7132043187539695,
+        "mean_matched_boundary_error_s": 0.2787636545919077,
+        "aggregation": "Equal-match mean of scores; counts summed. Boundary error only on matched transitions within 1 s."
+      },
+      "candidate": "centroid"
+    }
+  }
+}

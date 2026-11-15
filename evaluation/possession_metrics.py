@@ -642,7 +642,7 @@ def bootstrap_spell_f1(gt_codes, pred_codes, runs, n_draws,
 # -- entry point -------------------------------------------------------------------------------
 
 def evaluate(gt_codes, pred_codes, taus=TAUS, bootstrap_n=BOOTSTRAP_N, typed="to"):
-    """Every metric for one submission. The only function run_evaluation.py needs.
+    """Compute all evaluation metrics for one submission.
 
     Touches the full-length arrays exactly twice: once for the confusion matrix, once for the
     run-length encoding behind the temporal metrics.
