@@ -1,6 +1,10 @@
 # Who Has the Ball Possession?
 
-**Technical report · More than a Hack 2027 · Round 1**
+**Technical report | More than a Hack 2027 | Round 1**
+
+![Synchronized video, tracking, possession timeline, and evaluation](docs/assets/app-demo.gif)
+
+[Learn how it works in just 3 minutes](docs/assets/app-demo.gif).
 
 ## Abstract
 
@@ -257,14 +261,6 @@ The app reads the same submission CSV. Run it and the browser on the same comput
 See the [app guide](app/README.md) for camera inputs and playback alignment.
 For tests and recording tools, install `pipenv sync --dev`. After setup and training,
 run `pipenv run python -m pytest tests`.
-
-
-## Demo
-
-![Synchronized video, tracking, possession timeline, and evaluation](docs/assets/app-demo.gif)
-
-[View the 20-second GIF at full size](docs/assets/app-demo.gif).
-
 
 ## Repository layout
 
