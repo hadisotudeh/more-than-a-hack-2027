@@ -4,7 +4,9 @@
 
 ![Synchronized video, tracking, possession timeline, and evaluation](docs/assets/app-demo.gif)
 
-[Learn how it works in just 3 minutes](https://lnkd.in/p/dJVefwtx).
+<a href="https://lnkd.in/p/dJVefwtx" target="_blank" rel="noopener noreferrer">
+Learn how it works in just 3 minutes.
+</a>
 
 ## Abstract
 
